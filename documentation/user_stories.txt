@@ -1,0 +1,33 @@
+- sebagai penginput order dapat membuat order baru dengan cara
+	- menginput nomor antrian
+	- memilih jenis customer, member atau non member
+	- jika member, cari berdasarkan nomor hp, jika non member tidak perlu
+	- pilih nama printer
+	- pilih nama kertas
+	- pilih ukuran kertas (PxL) khusus untuk kertas yg harganya berdasarkan luas * quantity
+	- input quantity kertas
+	- input tipe finishing
+	- input quantity finishing
+	- input tanggal selesai
+	- input keterangan
+	- bisa check harga terlebih dahulu
+	- bisa override harga total
+	- bisa upload file
+	- melakukan penyelesaian order atau pembatalan order
+	
+- sebagai kasir dapat memilih order2 yang sudah selesai diinput untuk dibayar
+
+- sebagai kasir dapat print receipt
+
+- sebagai kasir dapat melakukan penyelesaian transaksi kasir atau pembatalan bayar
+
+- sebagai operator dapat memilih order2 yang sudah dibayar untuk diproses
+
+- sebagai operator dapat melihat detail order dan file2 yang sedang diproses
+
+- sebagai operator dapat melakukan penyelesaian proses operation order
+
+- sebagai penyerahan barang dapat memilih order2 yang sudah selesai di proses
+
+- sebagai penyerahan barang dapat melakukan penyelesaian penyerahan dengan menginput tanggal dan jam penyerahan barang dan juga nama penerima
+

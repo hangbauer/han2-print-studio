@@ -1,0 +1,53 @@
+﻿@page
+@model CreateModel
+@{
+}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Buat Order Detail</h1>
+</div>
+
+<form method="post" class="row g-3">
+    <div class="col-md-6">
+        <label for="PrinterName" class="form-label">Nama Printer</label>
+        <select id="PrinterName" class="form-select">
+            <option value="">Pilih Nama Printer...</option>
+            <option value="1">Printer 1</option>
+            <option value="2">Printer 2</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="PaperName" class="form-label">Nama Kertas</label>
+        <select id="PaperName" class="form-select">
+            <option value="">Pilih Nama Kertas...</option>
+            <option value="1">Kertas 1</option>
+            <option value="2">Kertas 2</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="PaperLength" class="form-label">Panjang dan Lebar</label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="PaperLength" placeholder="Panjang...">
+            <input type="text" class="form-control" id="PaperWidth" placeholder="Lebar...">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="Quantity" class="form-label">Jumlah</label>
+        <input type="text" class="form-control" id="Quantity">
+    </div>
+    <div class="col-md-6">
+        <label for="FinishedDate" class="form-label">Tanggal Selesai</label>
+        <input type="date" class="form-control" id="FinishedDate" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+    </div>
+    <div class="col-md-12">
+        <label for="Notes" class="form-label">Keterangan</label>
+        <textarea class="form-control" id="Notes" rows="3"></textarea>
+    </div>
+    <div class="col-md-6">
+        <label for="FileUpload" class="form-label">File</label>
+        <input class="form-control" type="file" id="FileUpload" multiple>
+    </div>
+    <div class="col-12 text-end">
+        <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+    </div>
+</form>

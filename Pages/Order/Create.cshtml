@@ -1,0 +1,37 @@
+﻿@page
+@model CreateModel
+@{
+}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Buat Order</h1>
+</div>
+
+<form method="post" class="row g-3">
+    <div class="col-md-6">
+        <label for="QueueNo" class="form-label">Nomor Antrian</label>
+        <input type="text" class="form-control" id="QueueNo">
+    </div>
+    <div class="col-md-6">
+        <label for="CustomerType" class="form-label">Tipe Pelanggan</label>
+        <select id="CustomerType" class="form-select">
+            <option value="1">Member</option>
+            <option value="2">Non Member</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="MobileNo" class="form-label">Nomor Hp</label>
+        <div class="input-group">
+            <span class="input-group-text">+62</span>
+            <input type="text" class="form-control" id="MobileNo">
+            <button class="btn btn-outline-secondary" type="button" id="btnSearch">Cari</button>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="CustomerName" class="form-label">Nama Pelanggan</label>
+        <input type="text" class="form-control" id="CustomerName">
+    </div>
+    <div class="col-12 text-end">
+        <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+    </div>
+</form>

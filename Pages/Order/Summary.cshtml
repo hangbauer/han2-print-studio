@@ -1,0 +1,73 @@
+﻿@page
+@model CreateModel
+@{
+}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Order</h1>
+</div>
+
+<form class="row g-3 border-bottom">
+    <div class="col-md-6">
+        <label for="QueueNo" class="form-label">Nomor Antrian</label>
+        <input type="text" class="form-control-plaintext fw-bolder" id="QueueNo" value="aaAA" readonly>
+    </div>
+    <div class="col-md-6">
+        <label for="CustomerType" class="form-label">Tipe Pelanggan</label>
+        <input type="text" class="form-control-plaintext fw-bolder" id="CustomerType" value="MEMBER" readonly>
+    </div>
+    <div class="col-md-6">
+        <label for="MobileNo" class="form-label">Nomor Hp</label>
+        <input type="text" class="form-control-plaintext fw-bolder" id="MobileNo" value="+628231212132" readonly>
+    </div>
+    <div class="col-md-6">
+        <label for="CustomerName" class="form-label">Nama Pelanggan</label>
+        <input type="text" class="form-control-plaintext fw-bolder" id="CustomerName" value="JONI" readonly>
+    </div>
+</form>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h5>List Order</h5>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group me-2">
+            <a class="btn btn-sm btn-outline-primary" asp-page="/Order/CreateDetail">Tambah Detail Order</a>
+        </div>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>twitter</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="col-12 text-end">
+    <button type="submit" class="btn btn-danger mt-3">Batal</button>
+    <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+</div>
