@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor;
+
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -36,7 +38,22 @@
     </button>
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#">Sign out</a>
+        @if (HttpContextAccessor.HttpContext?.User.Identity != null)
+        {
+          @if (HttpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+          {
+            <a class="nav-link px-3" asp-controller="Account" asp-action="Logout">Sign out</a>
+          }
+          else
+          {
+            <a class="nav-link px-3" asp-page="/Account/Login">Sign in</a>
+          }
+        }
+        else
+        {
+          <a class="nav-link px-3" asp-page="/Account/Login">Sign in</a>
+        }
+
       </div>
     </div>
   </header>
@@ -45,44 +62,50 @@
     <div class="row">
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky pt-3">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link @Html.ActiveClass("index")" aria-current="page" asp-area="" asp-page="/Index">
-                <span data-feather="home"></span>
-                Dashboard
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link @Html.ActiveClass("order")" asp-area="" asp-page="/Order/Index">
-                <span data-feather="file"></span>
-                Order
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link @Html.ActiveClass("cashier")" asp-area="" asp-page="/Cashier/Index">
-                <span data-feather="shopping-cart"></span>
-                Kasir
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link @Html.ActiveClass("operation")" asp-area="" asp-page="/Operation/Index">
-                <span data-feather="users"></span>
-                Operation
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link @Html.ActiveClass("delivery")" asp-area="" asp-page="/Delivery/Index">
-                <span data-feather="bar-chart-2"></span>
-                Pengiriman
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link @Html.ActiveClass("master")" asp-area="" asp-page="/Master/Index">
-                <span data-feather="layers"></span>
-                Master
-              </a>
-            </li>
-          </ul>
+          @if (HttpContextAccessor.HttpContext?.User.Identity != null)
+          {
+            @if (HttpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+            {
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link @Html.ActiveClass("index")" aria-current="page" asp-area="" asp-page="/Index">
+                    <span data-feather="home"></span>
+                    Dashboard
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link @Html.ActiveClass("order")" asp-area="" asp-page="/Order/Index">
+                    <span data-feather="file"></span>
+                    Order
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link @Html.ActiveClass("cashier")" asp-area="" asp-page="/Cashier/Index">
+                    <span data-feather="shopping-cart"></span>
+                    Kasir
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link @Html.ActiveClass("operation")" asp-area="" asp-page="/Operation/Index">
+                    <span data-feather="users"></span>
+                    Operation
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link @Html.ActiveClass("delivery")" asp-area="" asp-page="/Delivery/Index">
+                    <span data-feather="bar-chart-2"></span>
+                    Pengiriman
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link @Html.ActiveClass("master")" asp-area="" asp-page="/Master/Index">
+                    <span data-feather="layers"></span>
+                    Master
+                  </a>
+                </li>
+              </ul>
+            }
+          }
         </div>
       </nav>
 
